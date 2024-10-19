@@ -1,0 +1,28 @@
+{% load navigation_tags %}
+
+<footer>
+
+    {% with twitter_url=settings.base.NavigationSettings.twitter_url facebook_url=settings.base.NavigationSettings.facebook_url %}
+        {% if twitter_url or facebook_url %}
+            <p>
+                Follow me on:
+                {% if facebook_url %}
+                    <a href="{{ facebook_url }}">Facebook</a>
+                {% endif %}
+                {% if twitter_url %}
+                    <a href="{{ twitter_url }}">Twitter</a>
+                {% endif %}
+            </p>
+        {% endif %}
+    {% endwith %}
+
+    {# Add footer_text: #}
+    {% get_footer_text %}
+
+    <p>&copy; 2024 Domo Site. All rights reserved.</p>
+    <a >Privacy Policy</a>
+    <a >Terms of Service</a>
+
+    <!-- Dodany przycisk TOP -->
+    <button id="topButton" onclick="scrollToTop()">TOP</button>
+</footer>

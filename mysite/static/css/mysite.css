@@ -1,0 +1,217 @@
+/* Styl dla górnego paska menu */
+.navbar {
+    background-color: #333; /* Tło paska menu */
+    padding: 10px 10px; /* Wewnętrzne odstępy */
+    text-align: center; /* Wyśrodkowanie zawartości */
+    position: fixed; /* Ustawienie pozycji na fixed */
+    top: 0; /* Przyklejenie do górnej krawędzi */
+    width: 100%; /* Szerokość na 100% */
+    z-index: 1000; /* Ustawienie wysokiego z-index, aby navbar był nad innymi elementami */
+}
+
+.navbar-menu {
+    list-style: none; /* Usuń punkty listy */
+    margin: 0; /* Usuń marginesy */
+    padding: 0; /* Usuń wewnętrzne odstępy */
+    display: flex; /* Ustawienie elementów w linii */
+    justify-content: center; /* Wyśrodkowanie elementów */
+}
+
+.navbar-menu li {
+    margin: 0 15px; /* Dodaj odstępy między elementami */
+}
+
+.navbar-menu a {
+    color: #fff; /* Kolor tekstu */
+    text-decoration: none; /* Usuń podkreślenie */
+    font-size: 1.2em; /* Zwiększ rozmiar tekstu */
+}
+
+.navbar-menu a:hover {
+    color: #ff0; /* Kolor tekstu przy najechaniu */
+    text-decoration: underline; /* Podkreślenie linków przy najechaniu */
+}
+/* Styl dla sekcji głównej 
+.hero-image {
+    background-image: url('https://source.unsplash.com/1600x900/?nature'); } Ustaw obraz tła */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Ukryj poziomy pasek przewijania */
+}
+
+.template-homepage 
+.hero-image {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+}
+
+.hero-image img.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Przytnij obraz, aby pasował do kontenera */
+}
+
+.hero-text {
+    position: absolute;  
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 2;
+}
+
+.hero-text h1 {
+    font-size: 6em;
+    margin: 0;
+}
+
+.hero-text p {
+    font-size: 1.5em;
+}
+
+.hero-text .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: black;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero-text .btn:hover {
+    background-color: black;
+}
+
+.content-section {
+    position: relative;
+    background-color: white;
+    z-index: 4;
+    width: 100%; /* Upewnij się, że sekcja zajmuje całą szerokość */
+    box-sizing: border-box; /* Uwzględnij padding w szerokości */
+    text-align: center;
+    padding: 0px; /* Dodaj padding, aby zawartość nie przylegała do krawędzi */
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 100px;
+    margin-top: 20px;
+}
+
+.content-section h2 {
+    font-size: 5em;
+    margin: 0;
+    padding: 0px;
+}
+
+.content-section .body-content {
+    margin-top: 0px; /* Zmniejsz margines, aby zbliżyć elementy */
+}
+
+footer {
+    background-color: #333; /* Tło stopki */
+    padding: 20px; /* Wewnętrzne odstępy */
+    text-align: center; /* Wyśrodkowanie tekstu */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0; /* Usuń marginesy */
+    padding: 10px 0; /* Dodaj wewnętrzne odstępy */
+    color: white;
+}
+
+footer a {
+    text-decoration: none; /* Usuń podkreślenie */
+    margin: 0 10px; /* Dodaj odstępy między linkami */
+    color: blue;
+}
+
+footer a:hover {
+    text-decoration: underline; /* Podkreślenie linków przy najechaniu */
+    color: rgb(238, 34, 34);
+}
+
+/* Styl dla przycisku TOP */
+#topButton {
+    position: fixed; /* Ustawienie pozycji na fixed */
+    bottom: 20px; /* Odstęp od dołu */
+    right: 100px; /* Odstęp od prawej */
+    background-color: #333; /* Tło przycisku */
+    border: none; /* Usuń obramowanie */
+    padding: 10px 20px; /* Wewnętrzne odstępy */
+    cursor: pointer; /* Zmień kursor na wskaźnik */
+    border-radius: 5px; /* Zaokrąglone rogi */
+    font-size: 1em; /* Rozmiar tekstu */
+    display: none; /* Ukryj przycisk domyślnie */
+    z-index: 1000; /* Ustawienie wysokiego z-index, aby przycisk był nad innymi elementami */
+    color: white;
+}
+
+#topButton:hover {
+    background-color: #555; /* Zmiana koloru tła przy najechaniu */
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carousel-thumbnails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+}
+.carousel-thumbnails img {
+    width: 100px; /* Szerokość miniatur */
+    height: 66px; /* Wysokość miniatur */
+    object-fit: cover;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.carousel-inner {
+    width: 600px; /* Szerokość boxa */
+    height: 400px; /* Wysokość boxa */
+    margin: auto; /* Wyśrodkowanie boxa */
+    padding: 30px; /* Wewnętrzne odstępy */
+}
+
+.carousel-inner img {
+    width: 100%; /* Szerokość obrazów */
+    height: 100%; /* Wysokość obrazów */
+    object-fit: fill;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 4%; /* Zmniejszenie szerokości strzałek */
+}
+
+.carousel-control-prev {
+    left: 10%; /* Przesunięcie strzałki w lewo */
+}
+
+.carousel-control-next {
+    left: 85%; /* Przesunięcie strzałki w prawo */
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 150%, 150%; /* Zmniejszenie rozmiaru ikon strzałek */
+}
