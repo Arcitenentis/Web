@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-gallery{% endblock %}
+
+<style>
+    .gallery-page {
+        padding: 20px;
+        margin-top: 60px; /* Dodaj margines górny, aby obniżyć zawartość */
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .gallery-item {
+        flex: 1 1 calc(33.333% - 10px);
+        box-sizing: border-box;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .gallery-item.small img {
+        max-width: 150px;
+    }
+
+    .gallery-item.medium img {
+        max-width: 300px;
+    }
+
+    .gallery-item.large img {
+        max-width: 600px;
+    }
+
+    .gallery-item.square img {
+        aspect-ratio: 1 / 1;
+    }
+
+    .gallery-item.landscape img {
+        aspect-ratio: 16 / 9;
+    }
+
+    .gallery-item.portrait img {
+        aspect-ratio: 9 / 16;
+    }
+</style>
+
+{% block content %}
+<div class="gallery-page">
+    <h1>{{ page.title }}</h1>
+    <div class="intro">{{ page.intro|richtext }}</div>
+    <div class="gallery {{ page.layout }}">
+        {% for gallery_image in page.gallery_images.all %}
+        <div class="gallery-item {{ gallery_image.size }} {{ page.image_format }}">
+            {% if gallery_image.resolution == 'low' %}
+                {% image gallery_image.image fill-400x300 as img %}
+            {% elif gallery_image.resolution == 'medium' %}
+                {% image gallery_image.image fill-800x600 as img %}
+            {% elif gallery_image.resolution == 'high' %}
+                {% image gallery_image.image fill-1200x900 as img %}
+            {% endif %}
+            <img src="{{ img.url }}" alt="{{ img.title }}">
+            {% if gallery_image.caption %}
+            <p>{{ gallery_image.caption }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
